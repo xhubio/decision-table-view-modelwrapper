@@ -1,13 +1,14 @@
 'use strict';
 
 import { assert } from 'chai';
+import path from 'path';
 
-import { getLogger, sectionTypes } from 'decision-table-model';
-
+import { getLogger, sectionTypes, createModelHelper } from 'decision-table-model';
 import ViewWrapper from '../lib/ViewWrapper';
-import tableData from './fixtures/table_createPerson.json';
-
 import { TESTCASE_NAME_PREFIX } from '../lib/Constants';
+
+const tableJsonFile = path.join(__dirname, 'fixtures', 'table_createPerson.json');
+
 
 const FIELD_SECTION = sectionTypes.FIELD_SECTION;
 const FIELD_SUB_SECTION = sectionTypes.FIELD_SUB_SECTION;
@@ -143,9 +144,8 @@ describe('ViewWrapper', () => {
  * Helper function to create a full loaded wrapper object
  */
 function getWrapper() {
-  const table = {};
-  Object.assign(table, tableData);
-  return new ViewWrapper(table);
+  const tableModel = createModelHelper(tableJsonFile);
+  return new ViewWrapper(tableModel);
 }
 
 /**

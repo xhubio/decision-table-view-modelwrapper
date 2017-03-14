@@ -30,16 +30,13 @@
     "test": "npm run src_format && npm run src_lint && npm run src_doc_html && npm run src_doc_md && npm run build && npm run test_only",
     "debug": "npm run build && mocha --debug-brk tests/*Test.js --compilers js:babel-register"
   },
-  "contributors": [
-    {
-      "name": "Torsten Link",
-      "email": "torstenlink@gmx.de"
-    },
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
+  "contributors": [{
+    "name": "Torsten Link",
+    "email": "torstenlink@gmx.de"
+  }, {
+    "name": "Markus Felten",
+    "email": "markus.felten@gmx.de"
+  }],
   "license": "BSD-2-Clause",
   "config": {
     "commitizen": {
@@ -68,6 +65,6 @@
     "semantic-release": "^6.3.2"
   },
   "dependencies": {
-    "decision-table-model": "^1.0.0"
+    "decision-table-model": "^1.1.0"
   }
 }
