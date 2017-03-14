@@ -1,0 +1,67 @@
+{
+  "name": "decision-table-view-modelwrapper",
+  "version": "0.0.0-semantic-release",
+  "description": "JavaScript Modelling Framework. Base module",
+  "keywords": [
+    "decision-table-view-modelwrapper"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhubio/decision-table-view-modelwrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xhubio/decision-table-view-modelwrapper/issues"
+  },
+  "homepage": "https://github.com/xhubio/decision-table-view-modelwrapper#readme",
+  "engines": {
+    "node": ">=5"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "src_doc_html": "jsdoc -c ./.jsdoc.json src/*.js -d jsdoc",
+    "src_lint": "eslint src tests",
+    "src_format": "js-beautify -r -f `ls src/*.js tests/*.js`",
+    "src_doc_md": "jsdoc2md -l off -t doc/README.hbs -f src/*.js > doc/README.md",
+    "test_only": "mocha tests/*Test.js --require babel-polyfill --compilers js:babel-register",
+    "cover": "babel-node node_modules/istanbul/lib/cli.js cover --hook-run-in-context ./node_modules/mocha/bin/_mocha -- --R spec --U exports tests/*Test.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "prepublish": "npm run build",
+    "test": "npm run src_format && npm run src_lint && npm run src_doc_html && npm run src_doc_md && npm run build && npm run test_only",
+    "debug": "npm run build && mocha --debug-brk tests/*Test.js --compilers js:babel-register"
+  },
+  "contributors": [{
+    "name": "Torsten Link",
+    "email": "torstenlink@gmx.de"
+  }, {
+    "name": "Markus Felten",
+    "email": "markus.felten@gmx.de"
+  }],
+  "license": "BSD-2-Clause",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-node-debug": "^2.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "cz-conventional-changelog": "^1.2.0",
+    "eslint": "^3.10.2",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-mocha": "^4.8.0",
+    "js-beautify": "^1.6.4",
+    "jsdoc": "^3.4.3",
+    "jsdoc-to-markdown": "^2.0.1",
+    "mocha": "^3.1.2",
+    "istanbul": "0.4.5",
+    "semantic-release": "^6.3.2"
+  }
+}
