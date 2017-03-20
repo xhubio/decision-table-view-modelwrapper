@@ -13,6 +13,8 @@ notifications:
   email:
     - torstenlink@gmx.de
     - markus.felten@gmx.de
+  slack:
+    secure: C9cj7qMcWtGchA7sGyCW149KCkSJFLAgMSgNNcGuks1EEsmjTw0sX+BqhG0e18No17jM+sAATv5jbwp4j4NQqoV59xsFXKenWVuLjIvRQyo9mvRjoWfYJgYcuCO+jov4F2GHYbOiwXteHbi4cQj7O4yVoHGVwISElDQPGc/n3MnqZQfCoRI0ELRYHXaVXpvYTAgXtNotyQgmSSkPo5mmaIjZJEgt1+CG+5Czy8WhoXXJDni5j9rcxvCPrsux+aGNMDBxBEKuDabO+j06F3xtaSt6XwhJ4v/hN0lJhJC4mYiOsSdZ/90J8kO4t2v+e5Ue1DdK/BZm+0hj54vEPGzeEn4nzT07x+5MyvcpNZ0SQdFkv1snEKV1gWa0h78csFc9UBoRFMggcqqWEhwdQi7OzFlqnUzoS+OhKs5Xug2vfmMyV8skN7B+T21Jh89+qN7ain4u+Ki7LQhFgOOoUGGw76L20+WQdTccaZLgNZ/u4Yx24HOKmj0ydRLolRj6/oQ1W/5rq+zHro/RAeUSM8sLwPTxKfu5TsKy/qkRNGD13aEON52n6X87MPYO6A4ZrCK5JIFT3EenUBWkJPgDSFLUB+WOQ/4cYhQev7GMDVvzNs0Amf3n+FiMK8QjB4pez3e/tRMefs7R4dHfPjA4uYpXsbOTpROzSObvIcZCasxHWoI=
 before_install:
   - npm i -g npm@latest
 before_script:
