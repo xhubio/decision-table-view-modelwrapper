@@ -1,28 +1,28 @@
 language: node_js
 node_js:
-  - 6.9.1
+- 6.9.1
 sudo: false
 branches:
   only:
-    - master
-    - /^greenkeeper-.*$/
+  - master
+  - /^greenkeeper-.*$/
 cache:
   directories:
-    - node_modules
+  - node_modules
 notifications:
   email:
-    - torstenlink@gmx.de
-    - markus.felten@gmx.de
+  - torstenlink@gmx.de
+  - markus.felten@gmx.de
   slack:
-    secure: C9cj7qMcWtGchA7sGyCW149KCkSJFLAgMSgNNcGuks1EEsmjTw0sX+BqhG0e18No17jM+sAATv5jbwp4j4NQqoV59xsFXKenWVuLjIvRQyo9mvRjoWfYJgYcuCO+jov4F2GHYbOiwXteHbi4cQj7O4yVoHGVwISElDQPGc/n3MnqZQfCoRI0ELRYHXaVXpvYTAgXtNotyQgmSSkPo5mmaIjZJEgt1+CG+5Czy8WhoXXJDni5j9rcxvCPrsux+aGNMDBxBEKuDabO+j06F3xtaSt6XwhJ4v/hN0lJhJC4mYiOsSdZ/90J8kO4t2v+e5Ue1DdK/BZm+0hj54vEPGzeEn4nzT07x+5MyvcpNZ0SQdFkv1snEKV1gWa0h78csFc9UBoRFMggcqqWEhwdQi7OzFlqnUzoS+OhKs5Xug2vfmMyV8skN7B+T21Jh89+qN7ain4u+Ki7LQhFgOOoUGGw76L20+WQdTccaZLgNZ/u4Yx24HOKmj0ydRLolRj6/oQ1W/5rq+zHro/RAeUSM8sLwPTxKfu5TsKy/qkRNGD13aEON52n6X87MPYO6A4ZrCK5JIFT3EenUBWkJPgDSFLUB+WOQ/4cYhQev7GMDVvzNs0Amf3n+FiMK8QjB4pez3e/tRMefs7R4dHfPjA4uYpXsbOTpROzSObvIcZCasxHWoI=
+    secure: EiWHvzz+KRy+fJ/R0WrLW+317fCRF17zoRxpxcOZwurvrQ+Tq3FQqfTFwAlf2qZY4m9xRzfLO7aaz+cqzzfciofj2EccoiAbq44dLeyO3jji/oktosUlz0kZMCg6lpJ/oFbt+QutDdq8xzZvRy1CiEcd6KS3pnIbF7iTej5OvgEcETmlseoEVRLGvqqKZ34hLx8b3AS3ELUcMxITj/b3+455289rdicbUmSC4PmVbJDgABCHYxPN7RKszI8WF2/tsjwQaH3KSDR3YrFSPch3m061lcFX2CTZpIvVQsr7pdz3ZoccaHkaEeF59HUjPTHYMNl9kpWZPmFVa9q2lkYWQ8HLB8EoAiWo7ITccyPxpzRuQx5RKorP6Ci4ONqEQHYJ4TFPsWsuopBM28RUDFq2mRharIvENaG4q9O+N/pyISl/4SQUkGNFxoU5lpP7m7CNyCxUhO6VP30OegIkYqGD+Fmt/6lEciFwQpgXWHpmQhWjEFePdhaSxuH10jrMrsSaT98HRt1VX4aZqYvyoAwLX28RRgzaBhUBit//UkPL255/v6gTuZ94X4dWAgTyYZjRKNJRbw7K0rWX0aR/I4C/Pj7WvERaDKZnP9DyjDpXl25Kphob70L+oln44Kle/UTO1uUJGvOj6pnW5mYLOHlH1ZM7u9VRL3hH+JKkP9/+IaM=
 before_install:
-  - npm i -g npm@latest
+- npm i -g npm@latest
 before_script:
-  - npm prune
-  - npm install -g codecov
+- npm prune
+- npm install -g codecov
 script:
-  - npm run-script cover
+- npm run-script cover
 after_script:
-  - codecov
+- codecov
 after_success:
-  - npm run semantic-release
+- npm run semantic-release
