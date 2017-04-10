@@ -124,7 +124,7 @@ export default class ViewWrapper {
       return this._createRow(rowId);
     }
 
-    throw new Error(`The index '${number}' is out of range. Only '${this.rows.length}' rows available.`);
+    throw new Error(`The index '${number}' is out of range. Only '${this.rowOrder.length}' rows available.`);
   }
 
 
@@ -154,7 +154,7 @@ export default class ViewWrapper {
       return rowData.rowType;
     }
 
-    throw new Error(`The index '${rowNumber}' is out of range. Only '${this.rows.length}' rows available.`);
+    throw new Error(`The index '${rowNumber}' is out of range. Only '${this.rowOrder.length}' rows available.`);
   }
 
 
