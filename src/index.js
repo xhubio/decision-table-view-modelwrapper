@@ -1,5 +1,3 @@
-import ViewWrapper from './ViewWrapper';
+import ViewWrapper from './ViewWrapper'
 
-export {
-  ViewWrapper
-};
+export { ViewWrapper }
