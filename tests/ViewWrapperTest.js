@@ -1,5 +1,6 @@
 'use strict'
 
+import { assert } from 'chai'
 import path from 'path'
 
 import {
