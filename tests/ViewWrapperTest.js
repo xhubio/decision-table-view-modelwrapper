@@ -1,6 +1,5 @@
 'use strict'
 
-import { assert } from 'chai'
 import path from 'path'
 
 import {
@@ -30,7 +29,7 @@ describe('ViewWrapper', () => {
   describe('Columns', () => {
     it('_createFirstColumns', () => {
       const column = getWrapper()._createFirstColumnFor('c2')
-      assert.deepEqual(column, {
+      expect(column).toEqual({
         key: 'c2',
         name: 'Field Name',
       })
@@ -38,7 +37,7 @@ describe('ViewWrapper', () => {
 
     it('_createTestcaseColumnFor no name', () => {
       const column = getWrapper()._createTestcaseColumnFor(4)
-      assert.deepEqual(column, {
+      expect(column).toEqual({
         key: TESTCASE_NAME_PREFIX + '4',
         name: '4',
       })
@@ -48,7 +47,7 @@ describe('ViewWrapper', () => {
       const wrapper = getWrapper()
       wrapper.config.name.tc = 'gum_'
       const column = wrapper._createTestcaseColumnFor(4)
-      assert.deepEqual(column, {
+      expect(column).toEqual({
         key: TESTCASE_NAME_PREFIX + '4',
         name: 'gum_4',
       })
@@ -57,9 +56,9 @@ describe('ViewWrapper', () => {
     it('getColumns', () => {
       const wrapper = getWrapper()
       const columns = wrapper.getColumns()
-      assert.equal(columns.length, 41)
+      expect(columns.length).toEqual(41)
 
-      assert.deepEqual(columns[8], {
+      expect(columns[8]).toEqual({
         key: TESTCASE_NAME_PREFIX + '4',
         name: '4',
       })
@@ -71,7 +70,7 @@ describe('ViewWrapper', () => {
       const wrapper = getWrapper()
       wrapper._buildRows()
 
-      assert.equal(wrapper.getRowCount(), 67)
+      expect(wrapper.getRowCount()).toEqual(67)
     })
 
     it('getRowFor()', () => {
@@ -81,7 +80,7 @@ describe('ViewWrapper', () => {
         const expectedRow = getRowForNumber(i)
         const actualRow = wrapper.getRowFor(i)
         delete actualRow.id
-        assert.deepEqual(actualRow, expectedRow, `Error in row ${i}`)
+        expect(actualRow).toEqual(expectedRow)
       }
     })
 
@@ -93,42 +92,38 @@ describe('ViewWrapper', () => {
         const expectedRow = getRowForNumber(i)
         const actualRow = rowGetter(i)
         delete actualRow.id
-        assert.deepEqual(actualRow, expectedRow, `Error in row ${i}`)
+        expect(actualRow).toEqual(expectedRow)
       }
     })
 
     it('getRowTypeFor()', () => {
       const wrapper = getWrapper()
       // does some sanity checks for different row types
-      assert.equal(wrapper.getRowTypeFor(3), MULTI_ROW_SECTION)
-      assert.equal(wrapper.getRowTypeFor(7), FIELD_SECTION)
-      assert.equal(wrapper.getRowTypeFor(12), FIELD_SUB_SECTION)
-      assert.equal(wrapper.getRowTypeFor(58), SUMMARY_SECTION)
-      assert.equal(wrapper.getRowTypeFor(24), DATA_ROW)
-      assert.equal(wrapper.getRowTypeFor(66), DATA_ROW)
+      expect(wrapper.getRowTypeFor(3)).toEqual(MULTI_ROW_SECTION)
+      expect(wrapper.getRowTypeFor(7)).toEqual(FIELD_SECTION)
+      expect(wrapper.getRowTypeFor(12)).toEqual(FIELD_SUB_SECTION)
+      expect(wrapper.getRowTypeFor(58)).toEqual(SUMMARY_SECTION)
+      expect(wrapper.getRowTypeFor(24)).toEqual(DATA_ROW)
+      expect(wrapper.getRowTypeFor(66)).toEqual(DATA_ROW)
     })
 
     it('getFunctionGetRowTypeFor()', () => {
       const wrapper = getWrapper()
       const func = wrapper.getFunctionGetRowTypeFor()
       // does some sanity checks for different row types
-      assert.equal(func(3), MULTI_ROW_SECTION)
-      assert.equal(func(7), FIELD_SECTION)
-      assert.equal(func(12), FIELD_SUB_SECTION)
-      assert.equal(func(58), SUMMARY_SECTION)
-      assert.equal(func(24), DATA_ROW)
-      assert.equal(func(66), DATA_ROW)
+      expect(func(3)).toEqual(MULTI_ROW_SECTION)
+      expect(func(7)).toEqual(FIELD_SECTION)
+      expect(func(12)).toEqual(FIELD_SUB_SECTION)
+      expect(func(58)).toEqual(SUMMARY_SECTION)
+      expect(func(24)).toEqual(DATA_ROW)
+      expect(func(66)).toEqual(DATA_ROW)
     })
 
     it('getSectionTypeFor()', () => {
       const wrapper = getWrapper()
       // does some sanity checks for different row types
       for (let i = 0; i < expectedSectionTypes.length; i++) {
-        assert.equal(
-          wrapper.getSectionTypeFor(i),
-          expectedSectionTypes[i],
-          `Missmatch in row ${i}`
-        )
+        expect(wrapper.getSectionTypeFor(i)).toEqual(expectedSectionTypes[i])
       }
     })
 
@@ -137,7 +132,7 @@ describe('ViewWrapper', () => {
       const func = wrapper.getFunctionGetSectionTypeFor()
       // does some sanity checks for different row types
       for (let i = 0; i < expectedSectionTypes.length; i++) {
-        assert.equal(func(i), expectedSectionTypes[i], `Missmatch in row ${i}`)
+        expect(func(i)).toEqual(expectedSectionTypes[i])
       }
     })
   })
