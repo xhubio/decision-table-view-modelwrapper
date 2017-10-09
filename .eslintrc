@@ -16,12 +16,9 @@
   },
 
   "rules": {
-    "babel/arrow-parens": [2, "as-needed"],
-    "babel/array-bracket-spacing": [2, "never"],
-    "babel/generator-star-spacing": [2, {"before": true, "after": false}],
+    "arrow-parens": [2, "as-needed"],
+    "generator-star-spacing": [2, {"before": true, "after": false}],
     "array-bracket-spacing": 0,
-    "generator-star-spacing": 0,
-
     "arrow-spacing": 2,
     "block-scoped-var": 0,
     "brace-style": [2, "1tbs", {"allowSingleLine": true}],
@@ -46,8 +43,8 @@
     "handle-callback-err": [2, "error"],
     "id-length": 0,
     "id-match": [2, "^(?:_?[a-zA-Z0-9]*)|[_A-Z0-9]+$"],
-  #  "indent": [2, 2, {"SwitchCase": 1}],
-    "indent": [2, 2],
+    "indent": [2, 2, {"SwitchCase": 1}],
+    #"indent": [2, 2],
     "init-declarations": 0,
     "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
     "keyword-spacing": 2,
