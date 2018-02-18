@@ -51,7 +51,7 @@
     "eslint": "^4.14.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-babel": "^4.1.2",
-    "flow-bin": "^0.62.0",
+    "flow-bin": "^0.65.0",
     "jest": "^22.0.4",
     "jest-cli": "^22.0.4",
     "jest-environment-node-debug": "^2.0.0",
