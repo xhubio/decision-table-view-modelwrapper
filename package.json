@@ -36,7 +36,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "assert": "^1.4.1",
+    "assert": "^2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
